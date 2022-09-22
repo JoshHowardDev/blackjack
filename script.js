@@ -59,15 +59,15 @@ function declareHands() {
   let showing = '';
   
   dealerHand.forEach(card => {
-    dealerHandHTML = dealerHandHTML + `<img src="../cards/${card}.png" alt=${card} class="cards">`
+    dealerHandHTML = dealerHandHTML + `<img src="cards/${card}.png" alt=${card} class="cards">`
   });
 
   if (dealerHand.length < 2) {
-    dealerHandHTML = dealerHandHTML + `<img src="../cards/Back.png" alt="Card Back" class="cards">`
+    dealerHandHTML = dealerHandHTML + `<img src="cards/Back.png" alt="Card Back" class="cards">`
   }
   
   playerHand.forEach(card => {
-    playerHandHTML = playerHandHTML + `<img src="../cards/${card}.png" alt=${card} class="cards">`
+    playerHandHTML = playerHandHTML + `<img src="cards/${card}.png" alt=${card} class="cards">`
   });
   
   dealerHandEl.innerHTML = dealerHandHTML;
@@ -109,7 +109,7 @@ function dealerHit(handArray) {
     } else {
       declareHands();
       someoneBust = true;
-      document.body.style.backgroundImage = "../images/winner.png";
+      document.body.style.backgroundImage = "images/winner.png";
       playerWin("Dealer bust, You win!", true)
       return;
     }
@@ -120,14 +120,14 @@ function dealerHit(handArray) {
 
 function playerLost(msg) {
   updatePrompt(msg, true);
-  document.body.style.backgroundImage = "url('../images/loser.png')";
+  document.body.style.backgroundImage = "url('images/loser.png')";
   btn1.textContent = 'Play Again';
   btn2.textContent = 'Play Again';    
 }
 
 function playerWin(msg) {
   updatePrompt(msg, true);
-  document.body.style.backgroundImage = "url('../images/winner.png')";
+  document.body.style.backgroundImage = "url('images/winner.png')";
   btn1.textContent = 'Play Again';
   btn2.textContent = 'Play Again';  
 }
